@@ -19,7 +19,7 @@ gulp.task('webpack', () => {
     },
     module: {
       preLoaders: [
-        {test: /\.js$/, exclude: /node_modules|web_modules/, loader: 'eslint'}
+        {test: /\.js$/, exclude: /node_modules|web_modules/, loader: 'eslint-loader'}
       ],
       loaders: [
         {test: /\.js$/, exclude: /node_modules|web_modules/, loader: 'babel-loader'},
@@ -37,7 +37,7 @@ gulp.task('webpack', () => {
     resolve: {
       modulesDirectories: ["web_modules", "node_modules"]
     },
-    "eslint": {
+    eslint: {
       configFile: './.eslintrc',
       formatter: require('eslint-friendly-formatter'),
       failOnError: true
